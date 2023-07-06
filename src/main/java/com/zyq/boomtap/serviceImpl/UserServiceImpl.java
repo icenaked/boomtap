@@ -20,7 +20,10 @@ public class UserServiceImpl implements UserService {
     public UserVO login(UserVO userVO) {
         User user = toPO(userVO);
         User userFromDB = userMapper.getByNameAndPassword(user);
-        return toVO(userFromDB);
+        if (userFromDB != null){
+            return toVO(userFromDB);
+        }
+        return null;
     }
 
 
