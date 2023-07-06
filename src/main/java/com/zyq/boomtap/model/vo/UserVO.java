@@ -1,32 +1,35 @@
 package com.zyq.boomtap.model.vo;
 
+import lombok.Data;
+
+@Data
 public class UserVO {
 
-    private String name;
+//    private String userName;
+//
+//    private Integer age;
+//
+//    private String password;
 
-    private Integer age;
+    private Integer id;
 
-    public String getName() {
-        return name;
-    }
+    private String username;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    private String password;
 
-    public Integer getAge() {
-        return age;
-    }
+    private String email;
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+    private Short age;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+    private String sex;
+
+    private String tel;
+
+    private String addr;
+
+    private String card;
+
+    private Short married;
+
+    private Double salary;
 }

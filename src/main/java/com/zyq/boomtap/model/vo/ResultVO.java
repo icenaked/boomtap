@@ -1,5 +1,8 @@
 package com.zyq.boomtap.model.vo;
 
+import lombok.Data;
+
+@Data
 public class ResultVO<T> {
 
     private Integer code;

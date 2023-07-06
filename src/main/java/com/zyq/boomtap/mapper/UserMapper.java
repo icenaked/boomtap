@@ -18,4 +18,11 @@ public interface UserMapper {
 
     //需要xml
     public List<User> womanList();
+
+    /**
+     *根据用户名和密码查询员工
+     * @param user
+     */
+    @Select("select * from user where username = #{username} and password = #{password}")
+    User getByNameAndPassword(User user);
 }
