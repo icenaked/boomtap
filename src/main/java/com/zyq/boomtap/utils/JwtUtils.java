@@ -29,7 +29,7 @@ public class JwtUtils {
     /**
      * 解析令牌
      */
-    public static Claims parseJwtTest(String jwt){
+    public static Claims parseJwt(String jwt){
         Claims claims = Jwts.parser()
                 .setSigningKey(signKey)
                 .parseClaimsJws(jwt)
