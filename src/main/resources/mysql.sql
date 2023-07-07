@@ -16,6 +16,17 @@ CREATE TABLE IF NOT EXISTS `user`(
     `salary` FLOAT(8,2) DEFAULT 0 COMMENT '薪水'
 ) ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
+CREATE TABLE IF NOT EXISTS `operate_log`(
+     `id` INT UNSIGNED primary key  auto_increment COMMENT '操作编号',
+     `operate_user` INT UNSIGNED COMMENT '操作人id',
+     `operate_time` datetime COMMENT '操作时间',
+     `class_name` VARCHAR(100)  COMMENT '操作类名',
+     `method_name` VARCHAR(100) COMMENT '操作方法名',
+     `method_params`VARCHAR(1000) COMMENT '方法参数',
+     `return_value` VARCHAR(2000)  COMMENT '返回值',
+     `cost_time` bigint  COMMENT '方法执行耗时(ms)'
+) comment '日志操作表';
+
 INSERT INTO
     user(id,username,password,age,sex)
 VALUES

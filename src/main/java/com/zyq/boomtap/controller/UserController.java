@@ -1,6 +1,7 @@
 package com.zyq.boomtap.controller;
 
 
+import com.zyq.boomtap.anno.Log;
 import com.zyq.boomtap.model.vo.ResultVO;
 import com.zyq.boomtap.model.vo.UserVO;
 import com.zyq.boomtap.service.UserService;
@@ -36,8 +37,10 @@ public class UserController {
         return ResultVO.buildFailure("用户名或密码错误！");
     }
 
+    @Log
     @GetMapping("/info")
-    public String getMyInfo(Integer id){
+    public String getMyInfo(Integer id) throws InterruptedException {
+        Thread.currentThread().sleep(1000);
         return "隐私如下******";
     }
 }
