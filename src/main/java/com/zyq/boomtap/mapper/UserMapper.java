@@ -1,6 +1,7 @@
 package com.zyq.boomtap.mapper;
 
 import com.zyq.boomtap.model.po.User;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -25,4 +26,11 @@ public interface UserMapper {
      */
     @Select("select * from user where username = #{username} and password = #{password}")
     User getByNameAndPassword(User user);
+
+    /**
+     * 按id删除
+     * @param id
+     */
+    @Delete("delete from user where id = #{id}")
+    void deleteById (Integer id);
 }

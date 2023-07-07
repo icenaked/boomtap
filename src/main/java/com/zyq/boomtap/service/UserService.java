@@ -6,4 +6,6 @@ public interface UserService {
 
     public UserVO login(UserVO userVO);
 
+    public void deleteById(Integer id);
+
 }

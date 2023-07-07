@@ -7,6 +7,7 @@ import com.zyq.boomtap.service.UserService;
 import com.zyq.boomtap.utils.POJOConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -26,8 +27,11 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-
-
+    @Transactional(rollbackFor = Exception.class)//事务,不加rollbackfor就只回滚RuntimeException一种类型异常
+    @Override
+    public void deleteById(Integer id) {
+        userMapper.deleteById(id);
+    }
 
     UserVO toVO(User user){
         UserVO userVO=new UserVO();

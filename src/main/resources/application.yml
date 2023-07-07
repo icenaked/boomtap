@@ -24,6 +24,13 @@ mybatis:
   mapper-locations: classpath:/mapper/*.xml
 #  classpath后添加你xml文件的目录
 
+#事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+
+
 
 #  默认执行
 #  sql:
