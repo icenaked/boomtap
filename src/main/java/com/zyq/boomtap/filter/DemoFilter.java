@@ -47,6 +47,7 @@ public class DemoFilter implements Filter {
             return;
         }
 
+        //读取header中的token字段
         String jwt = req.getHeader("token");
 
         if (!StringUtils.hasLength(jwt)){

@@ -40,7 +40,8 @@ public class UserController {
     @Log
     @GetMapping("/info")
     public String getMyInfo(Integer id) throws InterruptedException {
-        Thread.currentThread().sleep(1000);
+        //postman里面在header加token,token值为登录的返回值
+        //Thread.currentThread().sleep(1000);
         return "隐私如下******";
     }
 }
